@@ -53,23 +53,6 @@
             /* Slight button press effect */
         }
     </style>
-    <script>
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCO4j4SIcDIJWAPRUNN9T3LnpbmI7tHe1o",
-            authDomain: "women-shealthbreastselfexam.firebaseapp.com",
-            projectId: "women-shealthbreastselfexam",
-            storageBucket: "women-shealthbreastselfexam.appspot.com",
-            messagingSenderId: "131810140827",
-            appId: "1:131810140827:web:73dac5659074a22b531c3e",
-            measurementId: "G-BNE354WW9Z"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q2HE9683F"></script>
     <script>
@@ -97,46 +80,124 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Navigation Bar -->
-    <nav class="bg-pink-100 border-gray-200 dark:bg-gray-900 sticky top-0 z-50">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="breastlogo.svg" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap text-pink-700 dark:text-white">Women's
-                    Health</span>
+    <nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white shadow-md rounded-md lg:px-8 lg:py-3 mt-10">
+        <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+            <!-- Brand Link -->
+            <a href="#" class="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
+                Women's Health
             </a>
-            <button id="menu-toggle" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-pink-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
+
+            <!-- Toggle Button for Mobile Menu -->
+            <button id="mobile-menu-toggle"
+                class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+                type="button">
+                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </span>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-pink-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-pink-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <a href="index.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200 md:hover:bg-transparent md:border-0 md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+
+            <!-- Navigation Menu for Desktop -->
+            <div id="desktop-menu" class="hidden lg:flex lg:items-center lg:space-x-6">
+                <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                    <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a>
                     </li>
-                    <li>
-                        <a href="objectives.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200 md:hover:bg-transparent md:border-0 md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Objectives</a>
-                    </li>
-                    <li>
-                        <a href="techniques.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200 md:hover:bg-transparent md:border-0 md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Techniques</a>
-                    </li>
-                    <li>
-                        <a href="dashboard.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200 md:hover:bg-transparent md:border-0 md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Dashboard</a>
-                    </li>
+                    <li><a href="objectives.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
+                    <li><a href="techniques.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
+                    <li><a href="dashboard.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
                 </ul>
             </div>
+
+            <!-- Login/Logout Buttons -->
+            <div class="flex space-x-4 mt-4 lg:mt-0">
+                <a id="loginButton" href="homepage.html"
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</a>
+                <button id="logoutButton"
+                    class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 hidden">Logout</button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden">
+            <ul class="flex flex-col p-4 border-t border-gray-200 bg-white dark:border-gray-700">
+                <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a></li>
+                <li><a href="objectives.html"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
+                <li><a href="techniques.html"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
+                <li><a href="dashboard.html"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
+            </ul>
         </div>
     </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggleButton.addEventListener('click', function () {
+                // Toggle mobile menu visibility
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTjtmlU7cFDWm0NakIouvfX6jkTXEOl30",
+            authDomain: "authwithbreastselfexamination.firebaseapp.com",
+            projectId: "authwithbreastselfexamination",
+            storageBucket: "authwithbreastselfexamination.appspot.com",
+            messagingSenderId: "593001136016",
+            appId: "1:593001136016:web:e6e51db5f2b45c3825fd15"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Elements
+        const loginButton = document.getElementById('loginButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Monitor the authentication state of the user
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // User is logged in - Show logout button, hide login button
+                loginButton.classList.add('hidden');
+                logoutButton.classList.remove('hidden');
+            } else {
+                // User is logged out - Show login button, hide logout button
+                loginButton.classList.remove('hidden');
+                logoutButton.classList.add('hidden');
+            }
+        });
+
+        // Logout function
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            signOut(auth).then(() => {
+                console.log('User logged out successfully.');
+                // Redirect to homepage or login page after logout
+                window.location.href = 'homepage.html';
+            }).catch((error) => {
+                console.error('Error logging out:', error.message);
+            });
+        });
+    </script>
 
     <!-- Content -->
     <div class="page bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
