@@ -317,26 +317,45 @@
             Form</button>
     </div>
     </section>
+    <div class="update">
 
-    <!-- Video Section -->
-    <div class="flex-grow w-full max-w-4xl bg-white p-6 mx-auto rounded-lg shadow-lg">
-        <video id="simulationVideo" class="w-full rounded-lg" controls>
-            <source src="updated.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- Video Section -->
+        <div class="flex-grow w-full max-w-4xl bg-white p-6 mx-auto rounded-lg shadow-lg">
+            <video id="simulationVideo" class="w-full rounded-lg" controls>
+                <source src="updated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-        <div class="mt-4">
-            <div class="progress-container">
-                <div id="progressBar" class="progress-bar"></div>
+            <div class="mt-4">
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
             </div>
         </div>
+
+        <!-- Toast Notification -->
+        <div id="toast"
+            style="display: none; position: fixed; bottom: 20px; right: 20px; background: #28a745; color: white; padding: 10px; border-radius: 5px;">
+            User successfully watched the video!
+        </div>
+        <script type="module" src="videoauth.js"></script>
+
+
+
+
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <script src="toastconfig.js"></script>
-        User successfully watched this video.
-    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script type="module" src="dashtoast.js"></script>
+
+
+
+
+
     <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/12fc3595-7e26-4b77-9111-cbe986aef865/webchat/v2/config.js"></script>
     <!--start of flyout menu-->

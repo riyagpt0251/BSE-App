@@ -19,6 +19,7 @@
     </script>
     <style>
         .toast {
+            display: none;
             position: fixed;
             bottom: 16px;
             right: 16px;
@@ -43,7 +44,7 @@
     <script>
         !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
         posthog.init('phc_vwlIKftCQdgrNomyE8DhjYudbMCHeym7t9CzR4htJ5T', {
-            api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
+            api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'
         })
     </script>
 </head>
@@ -77,14 +78,10 @@
             <!-- Navigation Menu for Desktop -->
             <div id="desktop-menu" class="hidden lg:flex lg:items-center lg:space-x-6">
                 <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                    <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a>
-                    </li>
-                    <li><a href="objectives.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
-                    <li><a href="techniques.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
-                    <li><a href="dashboard.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
+                    <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a></li>
+                    <li><a href="objectives.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
+                    <li><a href="techniques.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
+                    <li><a href="dashboard.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
                 </ul>
             </div>
 
@@ -101,34 +98,62 @@
         <div id="mobile-menu" class="lg:hidden">
             <ul class="flex flex-col p-4 border-t border-gray-200 bg-white dark:border-gray-700">
                 <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a></li>
-                <li><a href="objectives.html"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
-                <li><a href="techniques.html"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
-                <li><a href="dashboard.html"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
+                <li><a href="objectives.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Objectives</a></li>
+                <li><a href="techniques.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
+                <li><a href="dashboard.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
             </ul>
         </div>
     </nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleButton = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
 
-            toggleButton.addEventListener('click', function () {
-                // Toggle mobile menu visibility
-                if (mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('hidden');
-                } else {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
+    <!-- Main Content -->
+    <div class="page bg-gray-100">
+        <div class="container mx-auto p-4">
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Dashboard</h1>
+            <div class="bg-white rounded-lg shadow p-6 mb-4">
+                <div class="text-gray-700 text-lg font-medium">First Name: <span id="loggedUserFName"
+                        class="text-gray-900 font-bold"></span></div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 mb-4">
+                <div class="text-gray-700 text-lg font-medium">Last Name: <span id="loggedUserLName"
+                        class="text-gray-900 font-bold"></span></div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 mb-4">
+                <div class="text-gray-700 text-lg font-medium">Email: <span id="loggedUserEmail"
+                        class="text-gray-900 font-bold"></span></div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 mb-4">
+                <div class="text-gray-700 text-lg font-medium">Student Progress:
+                    <div id="videoStatus"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Success!</div>
+
+    <!-- Scripts -->
+    <script>
+        // Function to show the toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        // Example usage
+        showToast('Welcome to your dashboard!');
     </script>
+
+    <!-- Firebase Configuration and Authentication -->
     <script type="module">
         // Import Firebase functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -143,10 +168,15 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const database = getDatabase(app);
 
         // Elements
         const loginButton = document.getElementById('loginButton');
         const logoutButton = document.getElementById('logoutButton');
+        const loggedUserFName = document.getElementById('loggedUserFName');
+        const loggedUserLName = document.getElementById('loggedUserLName');
+        const loggedUserEmail = document.getElementById('loggedUserEmail');
+        const videoStatus = document.getElementById('videoStatus');
 
         // Monitor the authentication state of the user
         onAuthStateChanged(auth, async (user) => {
@@ -154,6 +184,29 @@
                 // User is logged in - Show logout button, hide login button
                 loginButton.classList.add('hidden');
                 logoutButton.classList.remove('hidden');
+
+                // Fetch and display user information
+                loggedUserFName.textContent = user.displayName || 'N/A';
+                loggedUserLName.textContent = user.displayName || 'N/A'; // Adjust as needed
+                loggedUserEmail.textContent = user.email || 'N/A';
+
+                // Check video progress
+                const userId = user.uid;
+                const videoRef = ref(database, 'users/' + userId);
+                get(videoRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const data = snapshot.val();
+                        if (data && data.videoWatched) {
+                            videoStatus.innerHTML = 'Video watched on: ' + new Date(data.watchedAt).toLocaleString();
+                        } else {
+                            videoStatus.innerHTML = 'Video not yet watched.';
+                        }
+                    } else {
+                        videoStatus.innerHTML = 'No data available.';
+                    }
+                }).catch((error) => {
+                    console.error('Error fetching data:', error.message);
+                });
             } else {
                 // User is logged out - Show login button, hide logout button
                 loginButton.classList.remove('hidden');
@@ -172,59 +225,6 @@
                 console.error('Error logging out:', error.message);
             });
         });
-    </script>
-
-    <!-- Main Content -->
-    <div class="page bg-gray-100">
-        <div class="container mx-auto p-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Dashboard</h1>
-            <div class="bg-white rounded-lg shadow p-6 mb-4">
-                <div class="text-gray-700 text-lg font-medium">First Name: <span id="loggedUserFName"
-                        class="text-gray-900 font-bold"></span></div>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6 mb-4">
-                <div class="text-gray-700 text-lg font-medium">Last Name: <span id="loggedUserLName"
-                        class="text-gray-900 font-bold"></span></div>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <div class="text-gray-700 text-lg font-medium">Email: <span id="loggedUserEmail"
-                        class="text-gray-900 font-bold"></span></div>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6 mb-4">
-                <div class="text-gray-700 text-lg font-medium">
-                    Student Progress:
-                    <div
-                        class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.13 2.06-2.12 3.642-2.12a1.5 1.5 0 0 1 0 3Zm2.3 3H2v-1h14.122c.19.66.573 1.26 1.078 1.758a4.999 4.999 0 0 0-2.944.682Z" />
-                        </svg>
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">100%</h5>
-                        <p class="font-normal text-gray-500 dark:text-gray-400">Completion</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast hidden">Success!</div>
-
-    <!-- Scripts -->
-    <script>
-        // Example function to show the toast
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
-        }
-
-        // Example usage
-        showToast('Welcome to your dashboard!');
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.js"></script>
 </body>
