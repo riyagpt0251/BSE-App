@@ -125,6 +125,54 @@
             });
         });
     </script>
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTjtmlU7cFDWm0NakIouvfX6jkTXEOl30",
+            authDomain: "authwithbreastselfexamination.firebaseapp.com",
+            projectId: "authwithbreastselfexamination",
+            storageBucket: "authwithbreastselfexamination.appspot.com",
+            messagingSenderId: "593001136016",
+            appId: "1:593001136016:web:e6e51db5f2b45c3825fd15"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Elements
+        const loginButton = document.getElementById('loginButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Monitor the authentication state of the user
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // User is logged in - Show logout button, hide login button
+                loginButton.classList.add('hidden');
+                logoutButton.classList.remove('hidden');
+            } else {
+                // User is logged out - Show login button, hide logout button
+                loginButton.classList.remove('hidden');
+                logoutButton.classList.add('hidden');
+            }
+        });
+
+        // Logout function
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            signOut(auth).then(() => {
+                console.log('User logged out successfully.');
+                // Redirect to homepage or login page after logout
+                window.location.href = 'homepage.html';
+            }).catch((error) => {
+                console.error('Error logging out:', error.message);
+            });
+        });
+    </script>
 
     <!-- Main Content -->
     <div class="page bg-gray-100">
