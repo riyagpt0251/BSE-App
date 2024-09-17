@@ -8,34 +8,39 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.1/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet">
     <style>
-        .progress-bar {
-            height: 8px;
-            background-color: #4a90e2;
-            transition: width 0.1s;
+        .update {
+            padding: 20px;
         }
 
         .progress-container {
-            background-color: #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            height: 8px;
             width: 100%;
+            background: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 5px;
+            background: #4caf50;
+            transition: width 0.2s;
         }
 
         .toast {
             display: none;
-            /* Hidden by default */
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            background-color: #4a90e2;
+            bottom: 20px;
+            right: 20px;
+            background: #28a745;
             color: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            /* Ensure it's above other content */
+            font-size: 16px;
         }
+        
 
         .flyout {
             display: none;
@@ -357,7 +362,6 @@
     </div>
     </section>
     <div class="update">
-
         <!-- Video Section -->
         <div class="flex-grow w-full max-w-4xl bg-white p-6 mx-auto rounded-lg shadow-lg">
             <video id="simulationVideo" class="w-full rounded-lg" controls>
@@ -373,15 +377,8 @@
         </div>
 
         <!-- Toast Notification -->
-        <div id="toast"
-            style="display: none; position: fixed; bottom: 20px; right: 20px; background: #28a745; color: white; padding: 10px; border-radius: 5px;">
-            User successfully watched the video!
-        </div>
+        <div id="toast" class="toast">User successfully watched the video!</div>
         <script type="module" src="videoauth.js"></script>
-
-
-
-
     </div>
 
 
