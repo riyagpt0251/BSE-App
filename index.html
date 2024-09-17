@@ -91,10 +91,43 @@
             /* Responsive height */
         }
 
-        /* Responsive adjustments */
+        .form-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            /* Ensures the container does not exceed the viewport width */
+            margin: 0 auto;
+            /* Center the container horizontally */
+            padding-top: 56.25%;
+            /* Aspect ratio for 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         @media (max-width: 768px) {
-            .flyout-content {
-                width: 95%;
+            .form-container {
+                padding-top: 75%;
+                /* Adjust aspect ratio for smaller screens if needed */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding-top: 100%;
+                /* Adjust aspect ratio for very small screens */
             }
         }
     </style>
@@ -260,65 +293,77 @@
     <!-- Content -->
     <div class="content">
         <section class="text-gray-600 body-font bg-pink-100">
-            <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
-                    src="breastcancer.png">
-                <div class="text-center lg:w-2/3 w-full">
-                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Background</h1>
-                    <p class="mb-8 leading-relaxed">Breast self-examination is important in the early diagnosis of
-                        breast cancer. The use of traditional education methods is insufficient for student nurses to
-                        gain breast self-examination skills in nurse education. New and different education methods are
-                        needed to gain skills in nurse education.</p>
+            <div class="container mx-auto flex px-5 py-24 items-center justify-center        <div class=" container
+                mx-auto mt-16 p-4">
+                <div class="form-container mx-auto">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSemMHje96lf1_0X-xObYoTrovksWlzKA_glEq9jFS_aY7GWlg/viewform?embedded=true"
+                        frameborder="0" marginheight="0" marginwidth="0">
+                        Loading…
+                    </iframe>
                 </div>
+            </div> flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+                src="breastcancer.png">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Background</h1>
+                <p class="mb-8 leading-relaxed">Breast self-examination is important in the early diagnosis of
+                    breast cancer. The use of traditional education methods is insufficient for student nurses to
+                    gain breast self-examination skills in nurse education. New and different education methods are
+                    needed to gain skills in nurse education.</p>
             </div>
-        </section>
+    </div>
+    </section>
 
-        <!-- Content -->
-        <div class="page bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
-            <div class="max-w-4xl mx-auto p-6 sm:p-10">
-                <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-                    <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
-                    <p class="mb-4 p-4 bg-gray-100 text-gray-800 leading-relaxed rounded-lg shadow-md">
-                        Breast cancer is one of the most common cancers seen among women in the reproductive age group.
-                        With
-                        an estimated 2.3 million cases every year, there are approximately 1.15 million people globally
-                        diagnosed with breast cancer. It is further estimated that the global burden of breast cancer
-                        will
-                        be more than 2 million in 2030. In India, it was estimated in 2018 that breast cancer accounted
-                        for
-                        32.8% of all cancers in women between 25 and 49 years of age, with a mortality of 27.7%. The BSE
-                        is
-                        easy to perform by oneself, cost-effective, and non-invasive, and recommended every month after
-                        the
-                        menstrual period. BSE is one of the competencies every girl/woman has to learn. Moreover, you
-                        will
-                        be
-                        a health care professional, so you are expected to do BSE yourself and impart health education
-                        to
-                        the general public about BSE. At the preservice level, you might have anxiety and lack of
-                        confidence
-                        related to doing BSE and have to gain confidence in performing BSE before you empower the
-                        general
-                        public. The virtual world is being used increasingly in medical education and clinical practice.
-                        Your familiarity with the technology can be considered essential while giving clinical skills to
-                        the
-                        general public. This project uses an AI-assisted simulation to help you learn the procedure. We
-                        wish
-                        you a happy and fruitful learning!!
-                    </p>
+    <!-- Content -->
+    <div class="page bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+        <div class="max-w-4xl mx-auto p-6 sm:p-10">
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
+                <p class="mb-4 p-4 bg-gray-100 text-gray-800 leading-relaxed rounded-lg shadow-md">
+                    Breast cancer is one of the most common cancers seen among women in the reproductive age group.
+                    With
+                    an estimated 2.3 million cases every year, there are approximately 1.15 million people globally
+                    diagnosed with breast cancer. It is further estimated that the global burden of breast cancer
+                    will
+                    be more than 2 million in 2030. In India, it was estimated in 2018 that breast cancer accounted
+                    for
+                    32.8% of all cancers in women between 25 and 49 years of age, with a mortality of 27.7%. The BSE
+                    is
+                    easy to perform by oneself, cost-effective, and non-invasive, and recommended every month after
+                    the
+                    menstrual period. BSE is one of the competencies every girl/woman has to learn. Moreover, you
+                    will
+                    be
+                    a health care professional, so you are expected to do BSE yourself and impart health education
+                    to
+                    the general public about BSE. At the preservice level, you might have anxiety and lack of
+                    confidence
+                    related to doing BSE and have to gain confidence in performing BSE before you empower the
+                    general
+                    public. The virtual world is being used increasingly in medical education and clinical practice.
+                    Your familiarity with the technology can be considered essential while giving clinical skills to
+                    the
+                    general public. This project uses an AI-assisted simulation to help you learn the procedure. We
+                    wish
+                    you a happy and fruitful learning!!
+                </p>
 
-                </section>
+            </section>
 
 
-            </div>
         </div>
-        <div class="form-container mx-auto mt-16 p-4 bg-white border rounded-lg shadow-lg">
+    </div>
+    <div class="container mx-auto p-4">
+        <div class="form-container">
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSemMHje96lf1_0X-xObYoTrovksWlzKA_glEq9jFS_aY7GWlg/viewform?embedded=true"
-                width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">
+                frameborder="0" marginheight="0" marginwidth="0">
                 Loading…
             </iframe>
         </div>
+    </div>
+
 
     </div>
     </section>
