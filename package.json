@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/aditya06hello/BSE-App/issues"
   },
-  "homepage": "https://github.com/aditya06hello/BSE-App#readme"
+  "homepage": "https://github.com/aditya06hello/BSE-App#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
