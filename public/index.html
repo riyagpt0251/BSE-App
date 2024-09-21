@@ -170,59 +170,90 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation Bar -->
-    <nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white shadow-md rounded-md lg:px-8 lg:py-3 mt-10">
-        <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
-            <!-- Brand Link -->
-            <a href="#" class="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
-                Women's Health
-            </a>
+   <!-- Include FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-            <!-- Toggle Button for Mobile Menu -->
-            <button id="mobile-menu-toggle"
-                class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
-                type="button">
-                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </span>
-            </button>
+<nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white shadow-md rounded-md lg:px-8 lg:py-3 mt-10 transition-all duration-300 ease-in-out">
+    <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+        <!-- Brand Link -->
+        <a href="#" class="flex items-center space-x-2 py-1.5 text-xl text-pink-600 font-bold hover:text-pink-700 transition duration-200">
+            <i class="fas fa-heartbeat"></i> 
+            <span>Women's Health</span>
+        </a>
 
-            <!-- Navigation Menu for Desktop -->
-            <div id="desktop-menu" class="hidden lg:flex lg:items-center lg:space-x-6">
-                <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                    <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a>
-                    </li>
+        <!-- Toggle Button for Mobile Menu -->
+        <button id="mobile-menu-toggle"
+            class="relative ml-auto h-8 w-8 rounded-lg text-center transition-all hover:bg-pink-200 focus:ring-2 focus:ring-pink-400 lg:hidden"
+            type="button">
+            <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </span>
+        </button>
 
-                    <li><a href="techniques.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
-                    <li><a href="dashboard.html"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
-                </ul>
-            </div>
-
-            <!-- Login/Logout Buttons -->
-            <div class="flex space-x-4 mt-4 lg:mt-0">
-                <a id="loginButton" href="homepage.html"
-                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</a>
-                <button id="logoutButton"
-                    class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 hidden">Logout</button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden">
-            <ul class="flex flex-col p-4 border-t border-gray-200 bg-white dark:border-gray-700">
-                <li><a href="index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Home</a></li>
-
-                <li><a href="techniques.html"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Techniques</a></li>
-                <li><a href="dashboard.html"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-pink-200">Dashboard</a></li>
+        <!-- Navigation Menu for Desktop -->
+        <div id="desktop-menu" class="hidden lg:flex lg:items-center lg:space-x-8">
+            <ul class="flex flex-col lg:flex-row lg:items-center gap-4">
+                <li>
+                    <a href="index.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="techniques.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                        <i class="fas fa-book-medical"></i>
+                        <span>Techniques</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
             </ul>
         </div>
-    </nav>
+
+        <!-- Login/Logout Buttons -->
+        <div class="flex space-x-4 mt-4 lg:mt-0">
+            <a id="loginButton" href="homepage.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+            <button id="logoutButton" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 hidden transition duration-200">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+        <ul class="flex flex-col p-4 border-t border-gray-200 bg-white">
+            <li>
+                <a href="index.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="techniques.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                    <i class="fas fa-book-medical"></i>
+                    <span>Techniques</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html" class="flex items-center space-x-2 py-2 px-4 text-gray-800 hover:bg-pink-200 hover:text-pink-600 rounded transition duration-200">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toggleButton = document.getElementById('mobile-menu-toggle');
@@ -422,43 +453,59 @@
 
 
     <!-- Footer -->
-    <footer class="bg-pink-100 rounded-lg shadow dark:bg-gray-900 m-4 p-6">
-        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="homepage.html" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="breastlogo.svg" class="h-8" alt="Flowbite Logo" />
-                    <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap text-pink-700 dark:text-white">Women's
-                        Health</span>
-                </a>
-                <ul
-                    class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0 dark:text-gray-400">
-                    <li class="m-2">
-                        <a href="#"
-                            class="hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded">About</a>
-                    </li>
-                    <li class="m-2">
-                        <a href="#"
-                            class="hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded">Privacy
-                            Policy</a>
-                    </li>
-                    <li class="m-2">
-                        <a href="#"
-                            class="hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded">Licensing</a>
-                    </li>
-                    <li class="m-2">
-                        <a href="#"
-                            class="hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded">Contact</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Include FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-            <hr class="my-6 border-pink-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-gray-600 sm:text-center dark:text-gray-400">© 2024 <a href="breastlogo.svg"
-                    class="hover:underline text-pink-600 dark:text-pink-500">Women's Health™</a>. All Rights
-                Reserved.</span>
+<footer class="bg-pink-100 rounded-lg shadow-lg dark:bg-gray-900 m-4 p-6 transition-all duration-300 ease-in-out">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <!-- Logo and Brand -->
+            <a href="homepage.html" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="breastlogo.svg" class="h-8" alt="Women's Health Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-pink-700 dark:text-white">
+                    Women's Health
+                </span>
+            </a>
+
+            <!-- Footer Links with Icons -->
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0 dark:text-gray-400">
+                <li class="m-2">
+                    <a href="#" class="flex items-center space-x-2 hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded transition duration-200">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="m-2">
+                    <a href="#" class="flex items-center space-x-2 hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded transition duration-200">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Privacy Policy</span>
+                    </a>
+                </li>
+                <li class="m-2">
+                    <a href="#" class="flex items-center space-x-2 hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded transition duration-200">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Licensing</span>
+                    </a>
+                </li>
+                <li class="m-2">
+                    <a href="#" class="flex items-center space-x-2 hover:underline text-pink-600 dark:text-pink-500 px-4 py-2 border border-pink-600 dark:border-pink-500 rounded transition duration-200">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </footer>
+
+        <!-- Horizontal line -->
+        <hr class="my-6 border-pink-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <!-- Footer Text -->
+        <span class="block text-sm text-gray-600 sm:text-center dark:text-gray-400">
+            © 2024 <a href="homepage.html" class="hover:underline text-pink-600 dark:text-pink-500">Women's Health™</a>. All Rights Reserved.
+        </span>
+    </div>
+</footer>
+
 </body>
 
 </html>
