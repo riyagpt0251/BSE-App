@@ -1,248 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login & Signup Page - Medical Theme with Video</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.4.1/dist/flowbite.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom pink color palette */
-        :root {
-            --pink-bright: #ff5c8d;
-            /* Bright pink for important buttons */
-            --pink-light: #ff99b6;
-            /* Light pink for hover */
-            --pink-dark: #cc4a70;
-            /* Darker pink for hover effects */
-            --gray-border: #e5e5e5;
-            /* Border color */
-        }
+      /* Custom pink color palette */
+      :root {
+        --pink-bright: #ff5c8d;
+        /* Bright pink for important buttons */
+        --pink-light: #ff99b6;
+        /* Light pink for hover */
+        --pink-dark: #cc4a70;
+        /* Darker pink for hover effects */
+        --gray-border: #e5e5e5;
+        /* Border color */
+      }
 
-        /* Make the video cover the entire background */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Ensures the video covers the entire background */
-            z-index: -1;
-            /* Keep video behind other content */
-        }
+      /* Make the video cover the entire background */
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensures the video covers the entire background */
+        z-index: -1;
+        /* Keep video behind other content */
+      }
 
-        /* Semi-transparent background for the form container */
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            /* Transparent white background */
-            border-radius: 10px;
-            padding: 2rem;
-            max-width: 400px;
-            width: 100%;
-        }
+      /* Semi-transparent background for the form container */
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        /* Transparent white background */
+        border-radius: 10px;
+        padding: 2rem;
+        max-width: 400px;
+        width: 100%;
+      }
 
-        /* Styling for the buttons */
-        .btn-primary {
-            background-color: var(--pink-bright);
-            color: white;
-            font-weight: bold;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
+      /* Styling for the buttons */
+      .btn-primary {
+        background-color: var(--pink-bright);
+        color: white;
+        font-weight: bold;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        width: 100%;
+        transition: background-color 0.3s ease;
+      }
 
-        /* Hover effect for buttons */
-        .btn-primary:hover {
-            background-color: var(--pink-dark);
-        }
+      /* Hover effect for buttons */
+      .btn-primary:hover {
+        background-color: var(--pink-dark);
+      }
 
-        .or {
-            text-align: center;
-            margin: 20px 0;
-        }
+      .or {
+        text-align: center;
+        margin: 20px 0;
+      }
 
-        .icons i {
-            font-size: 24px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
+      .icons i {
+        font-size: 24px;
+        margin: 0 10px;
+        cursor: pointer;
+      }
 
-        .links p {
-            text-align: center;
-        }
+      .links p {
+        text-align: center;
+      }
 
-        .links button {
-            background: none;
-            border: none;
-            color: var(--pink-bright);
-            cursor: pointer;
-        }
+      .links button {
+        background: none;
+        border: none;
+        color: var(--pink-bright);
+        cursor: pointer;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q2HE9683F"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4Q2HE9683F"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-4Q2HE9683F');
+      gtag("config", "G-4Q2HE9683F");
     </script>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K3Q9Z787');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-K3Q9Z787");
+    </script>
     <!-- End Google Tag Manager -->
     <script>
-        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-        posthog.init('phc_vwlIKftCQdgrNomyE8DhjYudbMCHeym7t9CzR4htJ5T', {
-            api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
-        })
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_vwlIKftCQdgrNomyE8DhjYudbMCHeym7t9CzR4htJ5T", {
+        api_host: "https://us.i.posthog.com",
+        person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+      });
     </script>
-</head>
+  </head>
 
-<body class="bg-gray-light flex justify-center items-center min-h-screen">
+  <body class="bg-gray-light flex justify-center items-center min-h-screen">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3Q9Z787" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K3Q9Z787"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Background video -->
     <video autoplay muted loop class="video-background">
-        <source src="backgroundvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+      <source src="backgroundvideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
 
     <!-- Container for Login & Signup Forms -->
     <div class="form-container shadow-lg">
+      <!-- Tab Navigation for Login/Signup -->
+      <ul class="flex justify-center mb-6">
+        <li class="mr-3">
+          <a
+            href="#signIn"
+            class="inline-block py-2 px-4 text-gray-600 hover:text-pink-bright border-b-2 border-transparent hover:border-pink-bright"
+            >Sign In</a
+          >
+        </li>
+        <li>
+          <a
+            href="#signup"
+            class="inline-block py-2 px-4 text-gray-600 hover:text-pink-bright border-b-2 border-transparent hover:border-pink-bright"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
 
-        <!-- Tab Navigation for Login/Signup -->
-        <ul class="flex justify-center mb-6">
-            <li class="mr-3">
-                <a href="#signIn"
-                    class="inline-block py-2 px-4 text-gray-600 hover:text-pink-bright border-b-2 border-transparent hover:border-pink-bright">Sign
-                    In</a>
-            </li>
-            <li>
-                <a href="#signup"
-                    class="inline-block py-2 px-4 text-gray-600 hover:text-pink-bright border-b-2 border-transparent hover:border-pink-bright">Sign
-                    Up</a>
-            </li>
-        </ul>
-
-        <!-- Signup Form -->
-        <div id="signup" class="hidden">
-            <h2 class="text-center text-2xl font-bold text-pink-bright mb-6">Register</h2>
-            <form method="post" action="">
-                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-user"></i>
-                    <label class="block text-gray-600 mb-2" for="fName">First Name</label>
-                    <input type="text" id="fName"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="First Name" required>
-                </div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-user"></i>
-                    <label class="block text-gray-600 mb-2" for="lName">Last Name</label>
-                    <input type="text" id="lName"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="Last Name" required>
-                </div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-envelope"></i>
-                    <label class="block text-gray-600 mb-2" for="rEmail">Email</label>
-                    <input type="email" id="rEmail"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="Email" required>
-                </div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-lock"></i>
-                    <label class="block text-gray-600 mb-2" for="rPassword">Password</label>
-                    <input type="password" id="rPassword"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="Password" required>
-                </div>
-                <button class="btn btn-primary" id="submitSignUp">Sign Up</button>
-            </form>
-            <p class="or">----------or----------</p>
-            <div class="icons">
-                <i class="fab fa-google"></i>
-                <i class="fab fa-facebook"></i>
-            </div>
-            <div class="links">
-                <p>Already have an account?</p>
-                <button id="signInButton">Sign In</button>
-            </div>
+      <!-- Signup Form -->
+      <div id="signup" class="hidden">
+        <h2 class="text-center text-2xl font-bold text-pink-bright mb-6">
+          Register
+        </h2>
+        <form method="post" action="">
+          <div
+            id="signUpMessage"
+            class="messageDiv"
+            style="display: none"
+          ></div>
+          <div class="input-group mb-4">
+            <i class="fas fa-user"></i>
+            <label class="block text-gray-600 mb-2" for="fName"
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="fName"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="input-group mb-4">
+            <i class="fas fa-user"></i>
+            <label class="block text-gray-600 mb-2" for="lName"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="lName"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div class="input-group mb-4">
+            <i class="fas fa-envelope"></i>
+            <label class="block text-gray-600 mb-2" for="rEmail">Email</label>
+            <input
+              type="email"
+              id="rEmail"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-group mb-4">
+            <i class="fas fa-lock"></i>
+            <label class="block text-gray-600 mb-2" for="rPassword"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="rPassword"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button class="btn btn-primary" id="submitSignUp">Sign Up</button>
+        </form>
+        <p class="or">----------or----------</p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
         </div>
-
-        <!-- SignIn Form -->
-        <div id="signIn">
-            <h2 class="text-center text-2xl font-bold text-pink-bright mb-6">Sign In</h2>
-            <form method="post" action="">
-                <div id="signInMessage" class="messageDiv" style="display:none;"></div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-envelope"></i>
-                    <label class="block text-gray-600 mb-2" for="email">Email</label>
-                    <input type="email" id="email"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="Email" required>
-                </div>
-                <div class="input-group mb-4">
-                    <i class="fas fa-lock"></i>
-                    <label class="block text-gray-600 mb-2" for="password">Password</label>
-                    <input type="password" id="password"
-                        class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
-                        placeholder="Password" required>
-                </div>
-                <p class="recover text-center mb-4">
-                    <a href="#" class="text-pink-bright">Recover Password</a>
-                </p>
-                <button class="btn btn-primary" id="submitSignIn">Sign In</button>
-            </form>
-            <p class="or">----------or----------</p>
-            <div class="icons">
-                <i class="fab fa-google"></i>
-                <i class="fab fa-facebook"></i>
-            </div>
-            <div class="links">
-                <p>Don't have an account?</p>
-                <button id="signUpButton">Sign Up</button>
-            </div>
+        <div class="links">
+          <p>Already have an account?</p>
+          <button id="signInButton">Sign In</button>
         </div>
+      </div>
+
+      <!-- SignIn Form -->
+      <div id="signIn">
+        <h2 class="text-center text-2xl font-bold text-pink-bright mb-6">
+          Sign In
+        </h2>
+        <form method="post" action="">
+          <div
+            id="signInMessage"
+            class="messageDiv"
+            style="display: none"
+          ></div>
+          <div class="input-group mb-4">
+            <i class="fas fa-envelope"></i>
+            <label class="block text-gray-600 mb-2" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-group mb-4">
+            <i class="fas fa-lock"></i>
+            <label class="block text-gray-600 mb-2" for="password"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="w-full px-4 py-2 border border-gray-border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-bright"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <p class="recover text-center mb-4">
+            <a href="#" class="text-pink-bright">Recover Password</a>
+          </p>
+          <button class="btn btn-primary" id="submitSignIn">Sign In</button>
+        </form>
+        <p class="or">----------or----------</p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+          <p>Don't have an account?</p>
+          <button id="signUpButton">Sign Up</button>
+        </div>
+      </div>
     </div>
 
     <!-- Toggle between login and signup -->
     <script>
-        const loginLink = document.querySelector('a[href="#signIn"]');
-        const signupLink = document.querySelector('a[href="#signup"]');
-        const loginForm = document.getElementById('signIn');
-        const signupForm = document.getElementById('signup');
+      const loginLink = document.querySelector('a[href="#signIn"]');
+      const signupLink = document.querySelector('a[href="#signup"]');
+      const loginForm = document.getElementById("signIn");
+      const signupForm = document.getElementById("signup");
 
-        loginLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            loginForm.classList.remove('hidden');
-            signupForm.classList.add('hidden');
-        });
+      loginLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+      });
 
-        signupLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            signupForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-        });
+      signupLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        signupForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      });
     </script>
 
     <script type="module" src="firebaseauth.js"></script>
     <script type="module" src="script.js"></script>
-</body>
-
+  </body>
 </html>
